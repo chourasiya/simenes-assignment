@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registation Page</title>
+        <link rel="icon" href="./img/favicon.png">
+        <link rel="stylesheet" href="./css/styles.min.css">
+    </head>
+    <body>
+        <div class="centered-form">
+            <div class="centered-form__box">
+                <h1>Registration Form</h1>
+                <form method = "post" action="/createuser" id = "formdata">
+                    <input type="text" name="username" placeholder="name" required>
+                    <input type="text" name="address" placeholder="Enter Address Here" required>
+                    <select id = "dept"  onchange="myFunction()" name="department" required>
+                        <option value = " ">Enter Department here</option>
+                        <option value = "HR">HR</option>
+                        <option value = "Software">Software</option>
+                        <option value = "Admin">Admin</option>
+                    </select>
+                </br></br>
+                    <div id = "field">
+                        
+                    </div>
+                </br>
+                    <input id = "DOB" type="date" onchange = "dobvalid()" name="dob" required>
+                    <input id = "pass" type="password" name = "pass" placeholder="Password" required>
+                    <input onblur = "myValidation2()" id = "cpass" type="text" name="cpass" placeholder="Confirm Password" required>
+                    <button type="submit">Register</button>
+                </form>
+            </div>
+        </div>
+        <script type="text/javascript">
+            function myFunction() {
+                var x = document.getElementById('dept').value;
+                console.log(x);
+                if(x == "HR"){
+                    document.getElementById('field').innerHTML = "<select name='field1' required> <option value = 'recruitment'>Recruitment</option> <option value = 'employee partner'>employee partner</option> <option value = 'project partner'>project partner</option> </select>";
+                }
+                else if(x == "Software"){
+                    document.getElementById('field').innerHTML = "<select name='field1' required> <option value = 'Webdev'>Web Developer</option> <option value = 'Cloud Engineer'>Cloud Engineer</option> <option value = 'Machine Learning'>Machine Learning</option> </select>";
+                }
+                else{
+                    document.getElementById('field').innerHTML = "<select name='field1' required> <option value = 'Managment Admin'>Managment Admin</option> <option value = 'Facilities'>Facilities</option> <option value = 'HR Admin'>HR Admin</option> </select>";
+                }
+            }
+            function dobvalid(){
+                var userdate = new Date(document.getElementById('DOB').value);
+	            var currentdate = new Date();
+	            if(userdate > currentdate)
+                    alert("Please input date less than current date");
+            }
+            function myValidation2() {
+                var b = document.getElementById('pass').value;
+                var c = document.getElementById('cpass').value;
+                if(b!=c){
+                    alert("Password and Confirm Password are not same");
+                }
+            }
+        </script>
+    </body>
+</html>

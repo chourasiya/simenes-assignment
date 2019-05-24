@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home Page</title>
+        <link rel="icon" href="./img/favicon.png">
+        <link rel="stylesheet" href="./css/styles.min.css">
+    </head>
+    <body>
+        <div class="centered-form">
+            <div class="centered-form__box">
+                <h1>Welcome <%= username%></h1>
+                <form method = "POST">
+                    <label>Name</label>
+                    <input type="text" value = <%= username%> readonly>
+                    <label>Address</label>
+                    <input type="text" value = <%= address%> readonly>
+                    <label>Department</label>
+                    <input type="text" value = <%= department%> readonly>
+                    <label>Field</label>
+                    <input type="text" value = <%= field%> readonly>
+                    <label>DOB</label>
+                    <input type="text" value = <%= dob%> readonly>
+                    </br>
+                    <button formaction = "/loginagain">Login As Another User</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

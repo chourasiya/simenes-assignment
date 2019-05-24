@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login Page</title>
+        <link rel="icon" href="./img/favicon.png">
+        <link rel="stylesheet" href="./css/styles.min.css">
+    </head>
+    <body>
+        <marquee><h1 style="color : red" >Registration Successfull, Please login with your credential. </h1></marquee>
+        <div class="centered-form">
+            <div class="centered-form__box">
+                <h1>Login</h1>
+                <form method = "post">
+                    <input type="text" name="username" placeholder="User name" required>
+                    <label>Password</label>
+                    <input type="password" name="pass" placeholder="Password" required>
+                    <button type = "submit" formaction = "/validateuser">Sign In</button>
+                </form>
+                    </br> 
+                <form method = "post">    
+                    <button type = "submit" formaction = "/registerpage" >Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
